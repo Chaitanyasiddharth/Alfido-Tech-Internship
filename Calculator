@@ -1,0 +1,45 @@
+# Basic Calculator Program 
+choice = input("Choose an operation: \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\n")
+if choice == '1':
+    def add():
+        num = int(input("Enter the amount of numbers you want to add: "))
+        total = 0
+        for i in range(num):
+            number = int(input("Enter number {}: ".format(i + 1)))
+            total += number
+        print(f"Sum = {total}")
+    add()
+elif choice == '2':
+    def subtract():
+        num = int(input("Enter the amount of numbers you want to subtract: "))
+        total = int(input("Enter the first number: "))
+        for i in range(1, num):
+            number = int(input("Enter number {}: ".format(i + 1)))
+            total -= number
+        print(f"Result = {total}")
+    subtract()
+elif choice == '3':
+    def multiply():
+        num = int(input("Enter the amount of numbers you want to multiply: "))
+        total = 1
+        for i in range(num):
+            number = int(input("Enter number {}: ".format(i + 1)))
+            total *= number
+        print(f"Product = {total}")
+    multiply()
+elif choice == '4':
+    def divide():
+        num = int(input("Enter the amount of numbers you want to divide: "))
+        total = int(input("Enter the first number: "))
+        for i in range(1, num):
+            number = int(input("Enter number {}: ".format(i + 1)))
+            if number == 0:
+                print("Error: Division by zero is not allowed.")
+                return
+            total /= number
+        print(f"Result = {total}")
+    divide()
+elif choice == '5':
+    print("Exiting the calculator. Goodbye!")
+else:
+    print("Invalid choice. Please select a valid operation.")   
