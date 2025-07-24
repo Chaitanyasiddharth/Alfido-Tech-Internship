@@ -1,0 +1,25 @@
+import random
+def guessing_game ():
+    number_to_guess = random.randint(1, 100)
+    attempt = 0
+    max_attempt = 3
+    print("Welcome to the Number Guessing Game!")
+    player_name = input("Provide your name to start the game:")
+    print(f"Welcome {player_name}! You have {max_attempt} attempts to guess the number between 1 and 100.")
+
+    while attempt < max_attempt:
+        guess = int(input(f"Attempt {attempt +1}: Enter your guess: "))
+        if guess <1 and guess> 100:
+            print("Enter a valid number between 1 and 100.")
+            continue
+        attempt += 1
+        if guess < number_to_guess:
+            print("Too low! Try again.")
+        elif guess > number_to_guess:
+            print("Too high! Try again.")
+        else:
+            print(f"Congratulations {player_name}! You've guessed the number {number_to_guess} correctly in {attempt} attempts.")
+            break
+    else:
+        print(f"Sorry {player_name}, you've used all your attempts. The number was {number_to_guess}. Better luck next time!")
+guessing_game()
